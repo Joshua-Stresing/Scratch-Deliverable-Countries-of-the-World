@@ -3,5 +3,6 @@ import './Header.css';
 
 // Set up a header
 export default function Header() {
-  return <header>Name of Project</header>;
+  return <header>Flags of the World
+  </header>;
 }
