@@ -23,10 +23,12 @@ export default function Main() {
     fetch(); 
   }, []);
 
+
   return (
     // <main style={{ backgroundImage: `url(${background})` }}>
     <div>
       <div>
+        //i need to map or something
         {/* <Country key={data.id} {...data} /> */}
         <Country />
       </div>
