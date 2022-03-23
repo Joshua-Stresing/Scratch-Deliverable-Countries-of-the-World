@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import './Main.css';
 import fetchCountries from '../../services/fetchcountry';
+import Country from '../../components/CountryCard/CountryCard';
 // import background from '../../background.png';
 
 
 export default function Main() {
+  const [country, setCountry] = useState([]);
   const [error, setError] = useState('');
+
   useEffect(() => {
     const fetch = async ()=> {
+
       try {
-        await fetchCountries(); 
+        const resp = await fetchCountries();
+        setCountry(resp); 
+
       } catch (error) {
         setError(error.message);
       }
@@ -19,7 +25,11 @@ export default function Main() {
 
   return (
     // <main style={{ backgroundImage: `url(${background})` }}>
-    <main>Main
-    </main>
+    <div>
+      <div>
+        {/* <Country key={data.id} {...data} /> */}
+        <Country />
+      </div>
+    </div>
   );
 }

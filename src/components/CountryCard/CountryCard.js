@@ -1,17 +1,17 @@
 import React from 'react';
-
+import './CountryCard.css';
 
 export default function Country({ name, iso2 }) {
 
-  const iso = iso2.toLowerCase();
+  const flag = iso2.toLowerCase();
 
   return ( 
-    <div className='card'>
-      <div className='name'>
+    <div className="card">
+      <div className="name">
         {name}
       </div>
       <div>
-        <img src= {`https://flagcdn.com/16x12/${iso}.png`} />
+        <img src={`https://flagcdn.com/16x12/${flag}.png`} />
       </div>
     </div>
   );
