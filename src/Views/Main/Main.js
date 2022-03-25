@@ -25,7 +25,7 @@ export default function Main() {
       }
     };
     fetch(); 
-  }, []);
+  }, [error]);
 
   const filterCountries = country.filter((country) =>
     cont === 'All' || country.continent === cont);
