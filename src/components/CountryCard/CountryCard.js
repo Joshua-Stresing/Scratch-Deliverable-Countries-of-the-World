@@ -2,8 +2,10 @@ import React from 'react';
 import './CountryCard.css';
 
 export default function Country({ name, iso2 }) {
-
+  console.log(iso2);
   const flag = iso2.toLowerCase();
+
+
 
   return ( 
     <div className="card">
