@@ -10,6 +10,7 @@ export default function Main() {
   const [country, setCountry] = useState([]);
   const [error, setError] = useState('');
   const [cont, setCont] = useState('All');
+  const [loading, setLoading] = useState(true);
   const continents = ['All', 'Asia', 'North America', 'Europe', 'Africa', 'South America', 'Antarctica', 'Oceania'];
 
 
@@ -23,9 +24,12 @@ export default function Main() {
       } catch (error) {
         setError(error.message);
       }
+      setLoading(false);
     };
     fetch(); 
   }, [error]);
+
+  if (loading) return <h1>Loading Details</h1>;
 
   const filterCountries = country.filter((country) =>
     cont === 'All' || country.continent === cont);
@@ -33,6 +37,7 @@ export default function Main() {
   return (
     // <main style={{ backgroundImage: `url(${background})` }}>
     <div>
+      {error && <p>{error}</p>}
       <div>
         <Filter continents={continents} setCont={setCont}/>
         {filterCountries.map((countryData) =>(
